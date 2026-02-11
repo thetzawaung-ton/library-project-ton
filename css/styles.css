@@ -1,3 +1,17 @@
-body {
-    background-color: red;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+table {
+    border: 2px solid grey;
+    font-size: 0.8rem;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid grey;
+    padding: 0.5rem;
 }

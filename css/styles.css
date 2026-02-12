@@ -35,3 +35,7 @@ form > p {
 p > label {
     justify-self: self-end;
 }
+
+input[type=checkbox] {
+    justify-self: self-start;
+}

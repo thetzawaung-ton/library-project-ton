@@ -57,9 +57,10 @@ form.addEventListener('submit', function(event) {
     const formTitle = document.querySelector('#title').value;
     const formAuthor = document.querySelector('#author').value;
     const formPages = document.querySelector('#pages').value;
-    const formReadStatus = document.querySelector('#read_status').value;
+    const formReadStatus = document.querySelector('#read_status:checked') ? "Read" : "Unread";
 
     addBookToLibrary(formTitle, formAuthor, formPages, formReadStatus);
     event.preventDefault();
+    form.reset();
     dialogElem.close();
 })

@@ -11,6 +11,10 @@ function Book(title, author, pages, readStatus) {
 
 const table = document.querySelector('table');
 const tbody = document.querySelector('tbody');
+const openBtn = document.querySelector('.open-dialog');
+const dialogElem = document.querySelector('dialog');
+const closeBtn = document.querySelector('.close-dialog');
+const form = document.querySelector('form');
 
 function addBookToLibrary(title, author, pages, readStatus) {
     const newBook = new Book(title, author, pages, readStatus);
@@ -39,3 +43,23 @@ function checkLibrary() {
     })
 }
 checkLibrary();
+
+openBtn.addEventListener('click', function() {
+    dialogElem.showModal();
+})
+
+closeBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+    dialogElem.close();
+})
+
+form.addEventListener('submit', function(event) {
+    const formTitle = document.querySelector('#title').value;
+    const formAuthor = document.querySelector('#author').value;
+    const formPages = document.querySelector('#pages').value;
+    const formReadStatus = document.querySelector('#read_status').value;
+
+    addBookToLibrary(formTitle, formAuthor, formPages, formReadStatus);
+    event.preventDefault();
+    dialogElem.close();
+})

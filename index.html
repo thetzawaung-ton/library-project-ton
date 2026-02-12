@@ -19,9 +19,34 @@
                 </tr>
             </thead>
             <tbody>
-                
+
             </tbody>
         </table>
+        <button class="open-dialog">Add New Book</button>
+        <div class="dialog">
+            <dialog>
+                <form method="dialog">
+                    <p>
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title" required>
+                    </p>
+                    <p>
+                        <label for="author">Author:</label>
+                        <input type="text" id="author" name="author" required>
+                    </p>
+                    <p>
+                        <label for="pages">Pages:</label>
+                        <input type="number" id="pages" name="pages" required>
+                    </p>
+                    <p>
+                        <label for="read_status">Read Status:</label>
+                        <input type="text" id="read_status" name="read_status" required>
+                    </p>
+                    <button type="submit">Add Book</button>
+                    <button class="close-dialog" type="button">Close</button>
+                </form>
+            </dialog>
+        </div>
     </div>
 </body>
 </html>

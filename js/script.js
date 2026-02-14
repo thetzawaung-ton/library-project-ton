@@ -40,6 +40,7 @@ function checkLibrary() {
 
     deleteBtn.classList.add('bookrow-delete');
     changeReadStatus.classList.add('change-read-status');
+    readStatus.classList.add('no-wrap');
 
     bookrow.setAttribute('data-book-id', book.id);
 

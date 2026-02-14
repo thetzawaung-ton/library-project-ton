@@ -6,14 +6,12 @@
 }
 
 body {
-    display: flex;
-    align-items: center;
-    height: 100vh;
-    background-color: #c9c6c6;
+    padding-top: 3rem;
+    background-color: #c9c6c9;
 }
 
 .container {
-    padding: 3rem;
+    padding: 1rem;
     display: grid;
     grid-template-columns: 1fr max-content;
     gap: 1rem;

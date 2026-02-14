@@ -52,7 +52,11 @@ th, td {
 }
 
 dialog {
-    padding: 0.5rem;
+    padding: 1rem;
+    margin: auto;
+    background-color: #c9c6c9;
+    border: 1px solid #c9c6c9;
+    border-radius: 1rem;
 }
 
 form > p {
@@ -60,6 +64,7 @@ form > p {
     grid-template-columns: 1fr 2fr;
     padding: 0.25rem;
     gap: 2rem;
+    margin-bottom: 0.5rem;
 }
 
 p > label {
@@ -72,4 +77,21 @@ input[type=checkbox] {
 
 tr *:first-child {
     max-width: 12ch;
+}
+
+.form-button {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-button > button {
+    font-size: 1rem;
+    padding:0 0.5rem;
+    border-radius: 0.5rem;
+    color: darkslategrey;
+}
+
+input[type=number]:user-invalid {
+    border: 2px dotted red;
+    outline: none;
 }

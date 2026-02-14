@@ -1,5 +1,6 @@
 const myLibrary = [
-    {id: 2355, title: 'Nway', author: 'Ohn', pages: 223, readStatus: 'Read'}
+    new Book('The Stranger', 'Albert Camus', 144, 'Read'),
+    new Book('1Q84', 'Haruki Murakami', 1184, 'Not Read'),
 ];
 
 function Book(title, author, pages, readStatus) {

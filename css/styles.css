@@ -76,7 +76,7 @@ input[type=checkbox] {
 }
 
 tr *:first-child {
-    max-width: 12ch;
+    max-width: 15ch;
 }
 
 .form-button {

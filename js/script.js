@@ -1,15 +1,17 @@
+class Book {
+    constructor(title, author, pages, readStatus) {
+        this.id = crypto.randomUUID();
+        this.title = title;
+        this.author = author;
+        this.pages  = pages;
+        this.readStatus = readStatus;
+    }
+}
+
 const myLibrary = [
     new Book('The Stranger', 'Albert Camus', 144, 'Read'),
     new Book('1Q84', 'Haruki Murakami', 1184, 'Not Read'),
 ];
-
-function Book(title, author, pages, readStatus) {
-    this.id = crypto.randomUUID();
-    this.title = title;
-    this.author = author;
-    this.pages  = pages;
-    this.readStatus = readStatus;
-}
 
 const table = document.querySelector('table');
 const tbody = document.querySelector('tbody');

@@ -59,15 +59,21 @@ dialog {
     border-radius: 1rem;
 }
 
-form > p {
+form > div {
     display: grid;
     grid-template-columns: 1fr 2fr;
     padding: 0.25rem;
-    gap: 2rem;
+    column-gap: 2rem;
     margin-bottom: 0.5rem;
 }
 
-p > label {
+form > div > div {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+}
+
+div > label {
     justify-self: self-end;
 }
 
@@ -98,4 +104,8 @@ input[type=number]:user-invalid {
 
 .no-wrap {
     white-space: nowrap;
+}
+
+span {
+    color: red;
 }

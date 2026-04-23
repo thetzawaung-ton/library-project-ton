@@ -64,6 +64,10 @@ checkLibrary();
 
 openBtn.addEventListener('click', function() {
     dialogElem.showModal();
+    const errorMessages = document.querySelectorAll("span");
+    errorMessages.forEach(message => {
+        message.textContent = "";
+    })
 })
 
 closeBtn.addEventListener('click', function (event) {
@@ -71,8 +75,56 @@ closeBtn.addEventListener('click', function (event) {
     form.reset();
     dialogElem.close();
 })
+const title = document.getElementById("title");
+const author = document.getElementById("author");
+const pages = document.getElementById("pages");
+const titleError = document.querySelector(".title-error");
+const authorError = document.querySelector(".author-error");
+const pagesError = document.querySelector(".pages-error");
+
+title.addEventListener("input", function() {
+    if(title.validity.valid) {
+        titleError.textContent = "";
+    } else {
+        titleError.textContent = "Title must be filled";
+    }
+});
+
+author.addEventListener("input", function() {
+    if(author.validity.valid) {
+        authorError.textContent = "";
+    } else {
+        authorError.textContent = "Author name must be filled";
+    }
+})
+
+pages.addEventListener("input", function() {
+    if(pages.validity.valid) {
+        pagesError.textContent = "";
+    } else if (pages.validity.rangeUnderflow) {
+        pagesError.textContent = "Pages count must be more than 0";
+    } else {
+        pagesError.textContent = "Pages count must be filled";
+    }
+})
 
 form.addEventListener('submit', function(event) {
+    if(title.validity.valueMissing) {
+        titleError.textContent = "Title must be filled";
+        event.preventDefault();
+    }
+    if(author.validity.valueMissing) {
+        authorError.textContent = "Author name must be filled";
+        event.preventDefault();
+    }
+    if(pages.validity.valueMissing) {
+        pagesError.textContent = "Pages count must be filled";
+        event.preventDefault();
+    } else if(pages.validity.rangeUnderflow){
+        pagesError.textContent = "Pages count must be more than 0";
+        event.preventDefault();
+    }
+    else {
     const formTitle = document.querySelector('#title').value;
     const formAuthor = document.querySelector('#author').value;
     const formPages = document.querySelector('#pages').value;
@@ -82,6 +134,7 @@ form.addEventListener('submit', function(event) {
     event.preventDefault();
     form.reset();
     dialogElem.close();
+    }
 })
 
 tbody.addEventListener('click', function(event) {
